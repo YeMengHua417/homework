@@ -73,15 +73,15 @@ button{
 }
 
 .btn-deny {
+  display: inline-block;
   width: 75px;
-  height: 30px;
+  height: 27px;
+  line-height: 27px;
   color: @white;
   background-color: @blue;
   .icon{
     margin-right: 5px;
-
   }
-
   text-align: center;
   &:hover{
     background-color: @darkBlue;
@@ -90,8 +90,9 @@ button{
 }
 
 .btn-add{
-  width: 30px;
-  height: 30px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
   color: @white;
   background-color: @blue;
 
@@ -100,7 +101,7 @@ button{
     background-color: @darkBlue;
   }
   .icon{
-    line-height: 30px;
+    line-height: 25px;
   }
 }
 
@@ -207,7 +208,7 @@ button{
   height: 100%;
   display: grid;
   background-color: @gray;
-  grid-template-columns: [line1] 185px [line2] auto [line3];
+  grid-template-columns: [line1] 250px [line2] auto [line3];
   grid-template-rows: [row1] 54px [row2] auto [row3] 50px [row4];
   grid-column-gap: 10px;
 
@@ -278,6 +279,7 @@ button{
         font-size: 14px;
         list-style-type: none;
         li{
+          padding:0 10px;
           background-color: @white;
           height: 90px;
           width: 100%;
@@ -347,6 +349,13 @@ button{
 
           }
 
+          .grid-button{
+            grid-column: line6 / line7;
+            grid-row: row2 / row3;
+            align-self: center;
+            justify-self: right;
+
+          }
 
         }
       }
@@ -361,34 +370,44 @@ button{
     background-color: @darkBlack;
     color: @white;
     text-align: center;
+
+    display: grid;
+    grid-template-columns: [line1] auto [line2];
+    grid-template-rows: [row1] auto [row2] auto [row3];
     .options{
       list-style-type: none;
-      padding: 20px 0;
+      grid-row: row1 / row2;
+      align-self: center;
+      justify-self: center;
       li{
-        padding-left: 40px;
+
         text-align: left;
         height: 45px;
         line-height: 45px;
         i{
-          margin-right: 10px;
+          margin-right: 20px;
         }
         &:hover{
-          background-color: @gray;
+          background-color: @lightDark;
           color: @blue;
         }
       }
     }
     .history{
-      margin-top: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      grid-row: row2 / row3;
+
+      padding:0 30px 0 10px;
 
       li{
+        cursor: pointer;
         font-size: 12px;
         color: @darkGray;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         padding: 5px;
-
         &:hover{
           color: @blue;
         }
@@ -423,6 +442,16 @@ button{
     &:before{
       content: 'building';
     }
+  }
+
+  .browser-type{
+    text-align: center;
+    display: inline-block;
+    background-color: @gray;
+    width: 77px;
+    line-height: 25px;
+    height: 25px;
+    color: @darkBlack;
   }
 
 
