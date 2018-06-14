@@ -20,7 +20,7 @@
   display: grid;
   background-color: @gray;
   grid-template-columns: [linePre] auto [line1] 270px [line2] 868px [line3] auto [lineEnd];
-  grid-template-rows: [row1] 60px [row2] minmax(618px, auto) [row3] 30px [row4];
+  grid-template-rows: [row1] 60px [row2] minmax(700px, auto) [row3] 30px [row4];
   grid-column-gap: 30px;
 
 
@@ -192,10 +192,9 @@
     grid-template-columns: [line1] auto [line2];
     grid-template-rows: [row1] auto [row2] auto [row3];
     .options{
+      padding-top: 30px;
       list-style-type: none;
       grid-row: row1 / row2;
-      align-self: center;
-      justify-self: stretch;
       li{
         padding-left: 30px;
         text-align: left;
