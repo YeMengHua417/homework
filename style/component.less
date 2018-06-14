@@ -198,7 +198,39 @@
 }
 
 .avatar{
+  vertical-align: text-bottom;
+  border-radius:50% ;
   width: 40px;
   height: 40px;
-  border-radius:50% ;
+  background: url(../images/avatar.png) no-repeat center;
+  position: relative;
+  display: inline-block;
+}
+
+
+.drop-down{
+  top: 50px;
+  left: -40px;
+  list-style-type: none;
+  z-index: 100;
+  position: absolute;
+  padding: 14px 0;
+  width: 140px;
+  background-color: @white;
+  text-align: center;
+
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  i{
+    margin: 0 10px;
+  }
+  li{
+    text-align: left;
+    line-height: 30px;
+    height: 30px;
+    &:hover{
+      background-color: @lightGray;
+    }
+  }
+
 }
