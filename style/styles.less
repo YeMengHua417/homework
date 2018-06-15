@@ -274,6 +274,39 @@
           grid-column: line1 /line3;
         }
       }
+      .tool-bar{
+        grid-template-columns: [line1] auto [line2];
+        grid-template-rows: [row1] 45px [row2] 52px [row3];
+        grid-row-gap: 10px;
+        background-color: @gray;
+
+        .tabs{
+          .tab{
+            width: 33.33%;
+          }
+          background-color: @white;
+          grid-row:row2 / row3;
+        }
+        .search{
+          input{
+            margin-left: 0;
+            width: 100%;
+          }
+          .icon{
+            top:18px
+          }
+          padding: 10px;
+          background-color: @white;
+          align-self: stretch;
+          justify-self: stretch;
+          grid-row:row1 / row2;
+        }
+        .expand{
+          display: none;
+        }
+
+
+      }
     }
     .siderbar{
       display: none;
