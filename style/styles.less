@@ -252,7 +252,7 @@
 @media screen and (max-width: 768px) {
   .grid-container{
     grid-template-columns: [line1] auto [line2] ;
-    grid-template-rows: [row1] 60px [row2] minmax(700px, auto) [row3] 30px [row4];
+    grid-template-rows: [row1] 60px [row2] auto [row3] 30px [row4];
 
     .main{
       padding: 20px 10px;
@@ -348,6 +348,9 @@
       display: none;
       grid-column: line1 / line2;
       grid-row: row2 / row3;
+    }
+    .footer{
+      display: none;
     }
 
   }
