@@ -18,10 +18,24 @@
   display: grid;
   background-color: @gray;
   .header{
+    padding: 0 15px;
     background-color: @white;
     grid-column: line1 / line3;
     text-align: center;
-    padding: 7px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .nav{
+      align-self: center;
+      justify-self: left;
+    }
+    .logo{
+      align-self: center;
+      justify-self: center;
+    }
+    .avatar{
+      align-self: center;
+      justify-self: right;
+    }
   }
   .main{
     .dashboard{
@@ -224,11 +238,6 @@
   }
 
   .grid-item.footer{
-    //background-color: @white;
-    //grid-column: linePre / lineEnd;
-    //grid-row: row3 / row4;
-    //text-align: center;
-
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -389,6 +398,12 @@
   .grid-container{
     grid-template-columns: [line1] 250px [line2] auto [line3];
     grid-template-rows: [row1] 60px [row2] minmax(700px, auto) [row3] 30px [row4];
+    .header{
+      padding: 0 50px;
+      .nav{
+        opacity: 0;
+      }
+    }
 
     .main{
       padding: 20px 10px;
@@ -425,6 +440,11 @@
     grid-template-rows: [row1] 60px [row2] minmax(700px, auto) [row3] 30px [row4];
     .header{
       grid-column: linePre / lineEnd;
+
+      padding: 0 50px;
+      .nav{
+        opacity: 0;
+      }
     }
     .main{
       padding: 20px 30px;
