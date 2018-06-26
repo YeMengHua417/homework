@@ -13,8 +13,10 @@
 @lightDark:#435466;
 
 
-//.md-modal{
-//  position: absolute;
+.md-modal{
+  left: -15px;
+  top: 38px;
+  position: absolute;
 
   .dialog-box {
     box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
@@ -22,7 +24,7 @@
     background-color: @white;
     width: 570px;
     height: 160px;
-    padding: 10px 12px 18px 14px;
+    padding: 0px 12px 18px 14px;
     border: 1px solid @blue;
     .tri {
       background-color: @white;
@@ -35,7 +37,12 @@
       border-right: 1px solid @blue;
       transform: rotate(-45deg);
     }
+    .illustrate{
+      text-align: left;
+      color: #2D4054;
+    }
     .close {
+      font-size: 16px;
       text-align: right;
       color: @blue;
     }
@@ -53,6 +60,6 @@
       }
     }
   }
-//
-//}
+
+}
 

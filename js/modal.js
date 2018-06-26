@@ -11,7 +11,7 @@
             "<div class='close'>"+
             "<i class='icon icon-close'></i>"+
             "</div>"+
-            "<div>Separate multiple resource name with commas</div>"+
+            "<div class='illustrate'>Separate multiple resource name with commas</div>"+
              "<input class='resource-input'>"+
             "<div>"+
             "<button class='btn-add-resource'>Add Resource</button><button class='btn-cancle'>Cancle</button>"+
