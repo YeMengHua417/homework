@@ -6,7 +6,7 @@
     popModal.prototype.show = function (parentId) {
 
         var modalHTML="<div class='md-modal'>"+
-            "<div class='dialog-bo'>"+
+            "<div class='dialog-box'>"+
             "<div class='tri'></div>"+
             "<div class='close'>"+
             "<i class='icon icon-close'></i>"+
@@ -19,23 +19,23 @@
             "</div>"+
         "</div>"
 
-        var parentNode = document.getElementById("parentId");
-        var modal =document.createElement(modalHTML);
+        var parentNode = document.getElementById(parentId);
 
+        var modal =document.createElement("div");
+        modal.innerHTML = modalHTML;
         modal.style.display = 'block';
-
 
 
         parentNode.appendChild(modal);
 
-        var close= modal.querySelector('close');
-        var addResourceBtn=modal.querySelector('btn-add-resource');
-        var cancleBtn=modal.querySelector('btn-cancle');
-
-
-        close.addEventListener('onclick',function () {
-            parentNode.removeChild(modal);
-        })
+        // var close= modal.querySelector('close');
+        // var addResourceBtn=modal.querySelector('btn-add-resource');
+        // var cancleBtn=modal.querySelector('btn-cancle');
+        //
+        //
+        // close.addEventListener('onclick',function () {
+        //     parentNode.removeChild(modal);
+        // })
 
     }
 
