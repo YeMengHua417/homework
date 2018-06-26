@@ -1,0 +1,58 @@
+@white: #FFFFFF;
+@black: #333333;
+
+@darkGray:#999;
+@lightGray:#CCC;
+
+@orange: #FF9A2A;
+@gray: #EFEFEF;
+@green:#7FBC39;
+@blue:#00B4CF;
+@darkBlue:#01869A;
+@darkBlack:#2D4054;
+@lightDark:#435466;
+
+
+.md-modal{
+  position: absolute;
+  display: none;
+  .dialog-box {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: relative;
+    background-color: @white;
+    width: 570px;
+    height: 160px;
+    padding: 10px 12px 18px 14px;
+    border: 1px solid @blue;
+    .tri {
+      background-color: @white;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      border-top: 1px solid @blue;
+      border-right: 1px solid @blue;
+      transform: rotate(-45deg);
+    }
+    .close {
+      text-align: right;
+      color: @blue;
+    }
+    input {
+      padding-left: 20px;
+      margin: 14px 0 22px 0;
+      width: 100%;
+      height: 35px;
+      color: @blue;
+      outline: none;
+    }
+    button {
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+}
+
