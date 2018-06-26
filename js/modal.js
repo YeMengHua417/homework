@@ -3,51 +3,67 @@
        this.opt = opt || {};
     };
 
-    popModal.prototype.show = function (parentId) {
+    popModal.prototype.show = function () {
 
         var modalHTML="<div class='md-modal'>"+
             "<div class='dialog-box'>"+
             "<div class='tri'></div>"+
             "<div class='close'>"+
-            "<i class='icon icon-close'></i>"+
+            "<i class='icon icon-close' id='icon-close'></i>"+
             "</div>"+
             "<div class='illustrate'>Separate multiple resource name with commas</div>"+
              "<input class='resource-input'>"+
-            "<div>"+
+            "<div class='btn-group'>"+
             "<button class='btn-add-resource'>Add Resource</button><button class='btn-cancle'>Cancle</button>"+
             "</div>"+
             "</div>"+
-        "</div>"
+        "</div>";
 
-        var parentNode = document.getElementById(parentId);
+        var parentNode = document.getElementById(this.opt.parentId);
 
         var modal =document.createElement("div");
         modal.innerHTML = modalHTML;
-        modal.style.display = 'block';
+
 
 
         parentNode.appendChild(modal);
 
-        // var close= modal.querySelector('close');
-        // var addResourceBtn=modal.querySelector('btn-add-resource');
-        // var cancleBtn=modal.querySelector('btn-cancle');
-        //
-        //
-        // close.addEventListener('onclick',function () {
-        //     parentNode.removeChild(modal);
-        // })
+        Event.addEvent(document.querySelector(".md-modal"),'click',function (event) {
+            var ev =Event.getEvent(event);
+            Event.stopPropagation(ev);
+        });
 
-    }
+        Event.addEvent(document.querySelector(".md-modal .icon-close"),'click',function (event) {
+            var ev =Event.getEvent(event);
+            parentNode.removeChild(modal);
+            Event.stopPropagation(ev);
+        });
+
+        Event.addEvent(document.querySelector(".md-modal .btn-cancle"),'click',function (event) {
+            var ev =Event.getEvent(event);
+            parentNode.removeChild(modal);
+            Event.stopPropagation(ev);
+        });
+
+        Event.addEvent(document.querySelector(".md-modal .btn-add-resource"),'click',function (event) {
+            var ev =Event.getEvent(event);
+            parentNode.removeChild(modal);
+            Event.stopPropagation(ev);
+        });
+
+
+
+    };
 
     var modal={
         'popModal':popModal
-    }
+    };
 
     window.modal = modal;
 
 })(window,undefined);
 
 function show_popModal( parentId ){
-    var Opop = new modal.popModal();
-    return Opop.show(parentId);
+    var Opop = new modal.popModal({'parentId':parentId});
+    return Opop.show();
 };

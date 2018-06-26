@@ -149,33 +149,28 @@
          </div>
      </div>
  </div>
-    <!--<div class="md-modal">-->
 
-        <!--<div class="dialog-box">-->
-            <!--<div class="tri"></div>-->
-            <!--<div class="close">-->
-                <!--<i class="icon icon-close"></i>-->
-            <!--</div>-->
-            <!--<div>Separate multiple resource name with commas</div>-->
-            <!--<input class="resource-input">-->
-            <!--<div>-->
-                <!--<button class="btn-add-resource">Add Resource</button><button class="btn-cancle">Cancle</button>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
 
- <script src="less.js" type="text/javascript"></script>
-</body>
-
+<script src="less.js" type="text/javascript"></script>
 <script src="js/modal.js"></script>
+<script src="js/event.js"></script>
 <script>
+
     window.onload=function () {
-        var Opop = new modal.popModal();
-        return Opop.show('btn-add-1');
-        // show_popModal('btn-add-1')
+
+        Event.addEvent(document.querySelector('#btn-add-1'),'click',function(event){
+
+            var ev = event || window.event;
+            var target = event.target || event.srcElement;
+            show_popModal('btn-add-1')
+
+        });
+
 
     }
 </script>
+</body>
+
+
 
 </html>
