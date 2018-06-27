@@ -114,7 +114,7 @@
                          </div>
                          <div class="grid-opr">
                              <div class="btn-add" ><i class="icon icon-plus" id="btn-add-1"></i></div>
-                             <ul>
+                             <ul id="browser-types">
                                  <li class="browser-type">
                                      <span>FireFox</span>
                                      <i class="icon icon-trash"></i>
@@ -131,24 +131,8 @@
                                      <span>Chrome</span>
                                      <i class="icon icon-trash"></i>
                                  </li>
-
                              </ul>
-                             <!--<div class="browser-type">-->
-                                 <!--<span>FireFox</span>-->
-                                 <!--<i class="icon icon-trash"></i>-->
-                             <!--</div>-->
-                             <!--<div class="browser-type">-->
-                                 <!--<span>Safari</span>-->
-                                 <!--<i class="icon icon-trash"></i>-->
-                             <!--</div>-->
-                             <!--<div class="browser-type">-->
-                                 <!--<span>Ubuntu</span>-->
-                                 <!--<i class="icon icon-trash"></i>-->
-                             <!--</div>-->
-                             <!--<div class="browser-type">-->
-                                 <!--<span>Chrome</span>-->
-                                 <!--<i class="icon icon-trash"></i>-->
-                             <!--</div>-->
+
                          </div>
                          <div class="grid-button">
                              <div class="btn-deny">
@@ -187,6 +171,23 @@
             if(event.target == event.currentTarget){
 
                 show_popModal('btn-add-1')
+            }
+
+
+        });
+
+
+
+
+        var ul = document.getElementById('browser-types');
+
+        Event.addEvent(ul,'click',function(event){
+            // var ev = event || window.event;
+            var tar = event.target || event.srcElement;
+
+            // var tar = event.target;
+            if(tar.nodeName.toLowerCase() == "i"){
+                tar.parentNode.parentNode.removeChild(tar.parentNode);
             }
 
 
