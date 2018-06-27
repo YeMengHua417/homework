@@ -90,10 +90,10 @@
     }
 
     .detail{
-      ul{
+
         font-size: 14px;
         list-style-type: none;
-        li{
+
           background-color: @white;
           width: 100%;
           display: grid;
@@ -175,8 +175,6 @@
             justify-self: right;
           }
 
-        }
-      }
 
     }
 
@@ -312,7 +310,7 @@
 
       }
       .detail{
-        ul li{
+
           .grid-pic{
             display: none;
           }
@@ -350,7 +348,7 @@
           //height: 172px;
           grid-template-columns: 1fr 1fr;
           grid-template-rows: 20px 20px 20px 80px auto;
-        }
+
       }
     }
     .siderbar{
@@ -375,14 +373,12 @@
       grid-column: line1 / line3;
       grid-row: row2 / row3;
       .detail{
-        ul li{
           .grid-pic{
             display: none;
           }
           padding:0 12px 0 8px;
           height: 110px;
           grid-template-columns: [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
-        }
       }
     }
     .siderbar{
@@ -415,14 +411,14 @@
         grid-template-columns: [line1] auto [line2] auto [line3] auto [line4];
       }
       .detail{
-        ul li{
-          .grid-pic{
-            display: none;
-          }
-          padding:0 10px;
-          height: 106px;
-          grid-template-columns: [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
+
+        .grid-pic{
+          display: none;
         }
+        padding:0 10px;
+        height: 106px;
+        grid-template-columns: [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
+
       }
 
     }
@@ -451,14 +447,12 @@
       grid-column: line2 / line3;
       grid-row: row2 / row3;
       .detail{
-        ul li{
-          .grid-pic{
-            display: block;
-          }
-          padding:0 18px;
-          height: 106px;
-          grid-template-columns: [line1] 114px [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
+        .grid-pic{
+          display: block;
         }
+        padding:0 18px;
+        height: 106px;
+        grid-template-columns: [line1] 114px [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
       }
     }
     .siderbar{

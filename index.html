@@ -93,8 +93,7 @@
              </div>
 
              <div class="detail">
-                 <ul>
-                     <li>
+
                          <div class="grid-pic">
                              <img src="images/windows.png">
                          </div>
@@ -114,7 +113,26 @@
                              <span>/var/lib/cruise-agent</span>
                          </div>
                          <div class="grid-opr">
-                             <div class="btn-add" id="btn-add-1"><i class="icon icon-plus"></i></div>
+                             <div class="btn-add" ><i class="icon icon-plus" id="btn-add-1"></i></div>
+                             <!--<ul>-->
+                                 <!--<li class="browser-type">-->
+                                     <!--<span>FireFox</span>-->
+                                     <!--<i class="icon icon-trash"></i>-->
+                                 <!--</li>-->
+                                 <!--<li class="browser-type">-->
+                                     <!--<span>Safari</span>-->
+                                     <!--<i class="icon icon-trash"></i>-->
+                                 <!--</li>-->
+                                 <!--<li class="browser-type">-->
+                                     <!--<span>Ubuntu</span>-->
+                                     <!--<i class="icon icon-trash"></i>-->
+                                 <!--</li>-->
+                                 <!--<li class="browser-type">-->
+                                     <!--<span>Chrome</span>-->
+                                     <!--<i class="icon icon-trash"></i>-->
+                                 <!--</li>-->
+
+                             <!--</ul>-->
                              <div class="browser-type">
                                  <span>FireFox</span>
                                  <i class="icon icon-trash"></i>
@@ -138,8 +156,7 @@
                                  <i class="icon icon-deny"></i>
                              </div>
                          </div>
-                     </li>
-                 </ul>
+
 
              </div>
 
@@ -160,9 +177,18 @@
 
         Event.addEvent(document.querySelector('#btn-add-1'),'click',function(event){
 
-            var ev = event || window.event;
-            var target = event.target || event.srcElement;
-            show_popModal('btn-add-1')
+            // var ev = event || window.event;
+            // var target = event.target || event.srcElement;
+
+
+            console.log(event.target.nodeName.toLowerCase())
+            console.log(event.currentTarget.nodeName.toLowerCase())
+
+            if(event.target == event.currentTarget){
+
+                show_popModal('btn-add-1')
+            }
+
 
         });
 

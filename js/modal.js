@@ -28,27 +28,21 @@
 
         parentNode.appendChild(modal);
 
-        Event.addEvent(document.querySelector(".md-modal"),'click',function (event) {
-            var ev =Event.getEvent(event);
-            Event.stopPropagation(ev);
-        });
+        // Event.addEvent(document.querySelector(".md-modal"),'click',function (event) {
+        //     var ev =Event.getEvent(event);
+        //     Event.stopPropagation(ev);
+        // });
 
         Event.addEvent(document.querySelector(".md-modal .icon-close"),'click',function (event) {
-            var ev =Event.getEvent(event);
             parentNode.removeChild(modal);
-            Event.stopPropagation(ev);
         });
 
         Event.addEvent(document.querySelector(".md-modal .btn-cancle"),'click',function (event) {
-            var ev =Event.getEvent(event);
             parentNode.removeChild(modal);
-            Event.stopPropagation(ev);
         });
 
         Event.addEvent(document.querySelector(".md-modal .btn-add-resource"),'click',function (event) {
-            var ev =Event.getEvent(event);
             parentNode.removeChild(modal);
-            Event.stopPropagation(ev);
         });
 
 
