@@ -20,7 +20,9 @@
             "</div>"+
         "</div>";
 
-        var parentNode = document.getElementById(this.opt.parentId);
+        // var parentNode = document.getElementById(this.opt.parentId);
+
+        var parentNode = this.opt.parentNode;
 
         var modal =document.createElement("div");
         modal.innerHTML = modalHTML;
@@ -96,7 +98,11 @@
 
 })(window,undefined);
 
-function show_popModal( parentId ){
-    var Opop = new modal.popModal({'parentId':parentId});
+// function show_popModal( parentId ){
+//     var Opop = new modal.popModal({'parentId':parentId});
+//     return Opop.show();
+// };
+function show_popModal( parentNode ){
+    var Opop = new modal.popModal({'parentNode':parentNode});
     return Opop.show();
 };
