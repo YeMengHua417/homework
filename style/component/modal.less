@@ -12,11 +12,21 @@
 @darkBlack:#2D4054;
 @lightDark:#435466;
 
+.mask{
+  display: none;
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background-color:#000;
+  opacity:0.3;
+  z-index:999;
+}
 
 .md-modal{
-  left: -15px;
-  top: 38px;
-  position: absolute;
+
   z-index: 1000;
 
   .dialog-box {
@@ -71,5 +81,56 @@
   display: inline-block;
   width: 25px;
   height: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .md-modal{
+    position: fixed;
+    bottom:0px;
+    left: 0px;
+    .dialog-box{
+      width: 100%;
+    }
+    .btn-cancle{
+      display: none;
+    }
+    .btn-add-resource{
+      width: 286px;
+    }
+    .dialog-box{
+      height: 200px;
+    }
+  }
+  .mask{
+    display: block;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .md-modal{
+    position: fixed;
+    top:270px;
+    left: 102px;
+  }
+
+  .mask{
+    display: block;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .md-modal{
+    left: -15px;
+    top: 38px;
+    position: absolute;
+
+  }
+
+  .mask{
+    display: none;
+  }
+
 }
 

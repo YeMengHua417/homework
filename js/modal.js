@@ -18,7 +18,8 @@
             "<button class='btn-add-resource'>Add Resource</button><button class='btn-cancle'>Cancle</button>"+
             "</div>"+
             "</div>"+
-        "</div>";
+        "</div>"+
+         "<div class='mask'></div>";
 
         // var parentNode = document.getElementById(this.opt.parentId);
 
