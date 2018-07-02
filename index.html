@@ -112,23 +112,19 @@
                              <span>/var/lib/cruise-agent</span>
                          </div>
                          <div class="grid-opr">
-                             <div class="btn-add" ><i class="icon icon-plus" id="btn-add-1"></i></div>
-                             <ul id="browser-types">
+                             <div class="btn-add" ><i class="icon icon-plus" ></i></div>
+                             <ul class="browser-types">
                                  <li class="browser-type">
-                                     <span>FireFox</span>
-                                     <i class="icon icon-trash"></i>
+                                     <span>FireFox</span><i class="icon icon-trash"></i>
                                  </li>
                                  <li class="browser-type">
-                                     <span>Safari</span>
-                                     <i class="icon icon-trash"></i>
+                                     <span>Safari</span><i class="icon icon-trash"></i>
                                  </li>
                                  <li class="browser-type">
-                                     <span>Ubuntu</span>
-                                     <i class="icon icon-trash"></i>
+                                     <span>Ubuntu</span><i class="icon icon-trash"></i>
                                  </li>
                                  <li class="browser-type">
-                                     <span>Chrome</span>
-                                     <i class="icon icon-trash"></i>
+                                     <span>Chrome</span><i class="icon icon-trash"></i>
                                  </li>
                              </ul>
 
@@ -151,7 +147,7 @@
                      <span>bjstdmngbgr01.thoughtwork.com</span>
                  </div>
                  <div class="grid-status">
-                     <div class="build-status"></div>
+                     <div class="idle-status"></div>
                  </div>
                  <div class="grid-ip">
                      <i class="icon icon-info"></i>
@@ -162,23 +158,19 @@
                      <span>/var/lib/cruise-agent</span>
                  </div>
                  <div class="grid-opr">
-                     <div class="btn-add" ><i class="icon icon-plus" id="btn-add-1"></i></div>
-                     <ul id="browser-types">
+                     <div class="btn-add" ><i class="icon icon-plus" ></i></div>
+                     <ul class="browser-types">
                          <li class="browser-type">
-                             <span>FireFox</span>
-                             <i class="icon icon-trash"></i>
+                             <span>FireFox</span><i class="icon icon-trash"></i>
                          </li>
                          <li class="browser-type">
-                             <span>Safari</span>
-                             <i class="icon icon-trash"></i>
+                             <span>Safari</span><i class="icon icon-trash"></i>
                          </li>
                          <li class="browser-type">
-                             <span>Ubuntu</span>
-                             <i class="icon icon-trash"></i>
+                             <span>Ubuntu</span><i class="icon icon-trash"></i>
                          </li>
                          <li class="browser-type">
-                             <span>Chrome</span>
-                             <i class="icon icon-trash"></i>
+                             <span>Chrome</span><i class="icon icon-trash"></i>
                          </li>
                      </ul>
 
@@ -251,19 +243,35 @@
         // 删除
 
 
-        var ul = document.getElementById('browser-types');
+        var ul = document.getElementsByClassName('browser-types');
 
-        Event.addEvent(ul,'click',function(event){
-            // var ev = event || window.event;
-            var tar = event.target || event.srcElement;
+        for(var j = 0;j<ul.length;j++){
+            Event.addEvent(ul[j],'click',function(event){
 
-            // var tar = event.target;
-            if(tar.nodeName.toLowerCase() == "i"){
-                tar.parentNode.parentNode.removeChild(tar.parentNode);
-            }
+                var tar = event.target || event.srcElement;
+
+                // var tar = event.target;
+                if(tar.nodeName.toLowerCase() == "i"){
+                    tar.parentNode.parentNode.removeChild(tar.parentNode);
+                }
 
 
-        });
+
+            });
+        }
+
+
+        // Event.addEvent(ul,'click',function(event){
+        //     // var ev = event || window.event;
+        //     var tar = event.target || event.srcElement;
+        //
+        //     // var tar = event.target;
+        //     if(tar.nodeName.toLowerCase() == "i"){
+        //         tar.parentNode.parentNode.removeChild(tar.parentNode);
+        //     }
+        //
+        //
+        // });
 
 
     }

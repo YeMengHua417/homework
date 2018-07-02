@@ -73,8 +73,8 @@
             var resourceArr = text.split(",");
 
             for(var index = 0;index < resourceArr.length;index++){
-                var resoureHTML = "<span>"+resourceArr[index]+"</span>"+
-                                  "<i class='icon icon-trash'></i>"
+                var resoureHTML = "<span>"+resourceArr[index]+"</span>" +
+                    "<i class='icon icon-trash'></i>"
                 var resource = document.createElement("li");
                 resource.innerHTML = resoureHTML;
                 resource.setAttribute("class","browser-type");
