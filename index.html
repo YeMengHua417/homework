@@ -32,7 +32,7 @@
              </div>
 
          </div>
-         <div class="grid-item siderbar">
+         <div class="grid-item siderbar" id="sidebar">
 
              <ul class="options">
                  <li><i class="icon icon-dashboard"></i>DASHBOARD</li>
@@ -59,7 +59,7 @@
 
              </ul>
          </div>
-         <div class="grid-item main">
+         <div class="grid-item main" id="main">
              <div class="dashboard">
                  <div class="building">
                      <i class="icon icon-cog play"></i>
@@ -86,8 +86,8 @@
                      <i class="icon icon-search"></i>
                  </div>
                  <div class="expand">
-                     <i class="icon icon-th-card"></i>
-                     <i class="icon icon-th-list"></i>
+                     <i class="icon icon-th-card" id="expand"></i>
+                     <i class="icon icon-th-list active" id="reduce" ></i>
                  </div>
 
              </div>
@@ -260,6 +260,32 @@
             });
         }
 
+
+        var expandBtn = document.getElementById("expand");
+        var reduceBtn = document.getElementById("reduce");
+
+        Event.addEvent(expandBtn,'click',function (event) {
+            var classVal = expandBtn.getAttribute("class");
+
+            if(classVal.indexOf("acitve") != -1){
+                return;
+            }else{
+                classVal = classVal.concat(" active");
+                expandBtn.setAttribute("class",classVal); // 给点击的button添加样式，并给对方的去掉
+                reduceBtn.setAttribute("class","icon icon-th-list")
+
+                // 展开
+                if(document.body.offsetWidth > 1024){
+                    var sidebar = document.getElementById("sidebar");
+                    sidebar.style.display="none";
+                    var main = document.getElementById("main");
+                    main.setAttribute("class","grid-item main main-expand")
+
+                }
+
+            }
+
+        })
 
         // Event.addEvent(ul,'click',function(event){
         //     // var ev = event || window.event;

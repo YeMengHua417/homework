@@ -1,7 +1,15 @@
 (function (window,undefined) {
     function popModal( opt ){
        this.opt = opt || {};
+       this.opt = {
+           'message': 'Separate multiple resource name with commas'
+       };
+
+      Object.assign(this.opt, opt); //合并
+
     };
+
+
 
 
     popModal.prototype.show = function () {
@@ -12,8 +20,8 @@
             "<div class='close'>"+
             "<i class='icon icon-close' id='icon-close'></i>"+
             "</div>"+
-            "<div class='illustrate'>Separate multiple resource name with commas</div>"+
-             "<input class='resource-input'>"+
+            "<div class='illustrate'>"+ this.opt.message+"</div>"+
+            "<input class='resource-input'>"+
             "<div class='btn-group'>"+
             "<button class='btn-add-resource'>Add Resource</button><button class='btn-cancle'>Cancle</button>"+
             "</div>"+
@@ -99,10 +107,7 @@
 
 })(window,undefined);
 
-// function show_popModal( parentId ){
-//     var Opop = new modal.popModal({'parentId':parentId});
-//     return Opop.show();
-// };
+
 function show_popModal( parentNode ){
     var Opop = new modal.popModal({'parentNode':parentNode});
     return Opop.show();

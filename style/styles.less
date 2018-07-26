@@ -80,8 +80,12 @@
       align-self: center;
       justify-self: right;
       display: inline-block;
+
+      .active{
+        color: @blue;
+      }
+
       .icon{
-        color: @darkBlack;
         margin-left: 20px;
         &:hover{
           color: @blue;
@@ -423,7 +427,6 @@
         padding:0 10px;
         height: 106px;
         grid-template-columns: [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
-
       }
 
     }
@@ -447,6 +450,9 @@
         opacity: 0;
       }
     }
+
+
+
     .main{
       padding: 20px 30px;
       grid-column: line2 / line3;
@@ -459,6 +465,7 @@
         height: 106px;
         grid-template-columns: [line1] 114px [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
       }
+
     }
     .siderbar{
       display: grid;
@@ -466,6 +473,12 @@
       grid-row: row2 / row3;
     }
   }
+
+  .main-expand{
+    grid-column: line1 / line3 !important;
+  }
 }
+
+
 
 
