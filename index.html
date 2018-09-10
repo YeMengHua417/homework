@@ -198,94 +198,107 @@
 <script src="js/event.js"></script>
 <script>
 
-    window.onload=function () {
+    var doc = document;
+    var addBtnLists = doc.querySelectorAll('.btn-add');
 
-        var addBtnList= document.getElementsByClassName('icon-plus');
+    for (var i = 0 , len = addBtnLists.length ; i < len ; i++) {
+      Event.addEvent(addBtnLists[i], 'click' , function (event) {
+        var event = Event.getEvent(event);
 
-        for(var i = 0;i<addBtnList.length;i++){
-            Event.addEvent(addBtnList[i],'click',function(event){
-
-                if(event.target == event.currentTarget){
-
-                    if(this.hasChildNodes()){
-                        return;
-                    }
-                    show_popModal(this)
-                }
-
-
-            });
+        if(event.target != event.currentTarget){
+          return;
         }
 
-        // Event.addEvent(document.querySelector('#btn-add-1'),'click',function(event){
+          var m = new Modal({
+            width:'405px',
+            height:'110px',
+            parentNode:this,
+            message:'Separate multiple resource name with commas',
+            buttons:[
+              {
+                    text:'',
+                    type:'green',
+                    callback:function () {
+                    }
+                },{
+                    text:'',
+                    type:'green',
+                    callback:function () {
+
+                    }
+              }
+            ]})
+
+          // event.stopPropagation()
+        
+      })
+    }
+
+    // window.onload=function () {
+    //
+    //     var addBtnList= document.getElementsByClassName('icon-plus');
+    //
+    //     for(var i = 0;i<addBtnList.length;i++){
+    //         Event.addEvent(addBtnList[i],'click',function(event){
+    //
+    //             if(event.target == event.currentTarget){
+    //
+    //                 if(this.hasChildNodes()){
+    //                     return;
+    //                 }
+    //                 show_popModal(this)
+    //             }
+    //
+    //
+    //         });
+    //     }
+    //
+    //     // 删除
+    //
+    //
+    //     var ul = document.getElementsByClassName('browser-types');
+    //
+    //     for(var j = 0;j<ul.length;j++){
+    //         Event.addEvent(ul[j],'click',function(event){
+    //
+    //             var tar = event.target || event.srcElement;
+    //
+    //             // var tar = event.target;
+    //             if(tar.nodeName.toLowerCase() == "i"){
+    //                 tar.parentNode.parentNode.removeChild(tar.parentNode);
+    //             }
+    //
+    //
+    //
+    //         });
+    //     }
+
+
+        // var expandBtn = document.getElementById("expand");
+        // var reduceBtn = document.getElementById("reduce");
         //
-        //     // var ev = event || window.event;
-        //     // var target = event.target || event.srcElement;
+        // Event.addEvent(expandBtn,'click',function (event) {
+        //     var classVal = expandBtn.getAttribute("class");
         //
+        //     if(classVal.indexOf("acitve") != -1){
+        //         return;
+        //     }else{
+        //         classVal = classVal.concat(" active");
+        //         expandBtn.setAttribute("class",classVal); // 给点击的button添加样式，并给对方的去掉
+        //         reduceBtn.setAttribute("class","icon icon-th-list")
         //
-        //     // console.log(event.target.nodeName.toLowerCase())
-        //     // console.log(event.currentTarget.nodeName.toLowerCase())
+        //         // 展开
+        //         if(document.body.offsetWidth > 1024){
+        //             var sidebar = document.getElementById("sidebar");
+        //             sidebar.style.display="none";
+        //             var main = document.getElementById("main");
+        //             main.setAttribute("class","grid-item main main-expand")
         //
-        //     if(event.target == event.currentTarget){
-        //
-        //         if(this.hasChildNodes()){
-        //             return;
         //         }
         //
-        //         // show_popModal('btn-add-1')
-        //         show_popModal(this)
         //     }
         //
-        //
-        // });
-
-
-        // 删除
-
-
-        var ul = document.getElementsByClassName('browser-types');
-
-        for(var j = 0;j<ul.length;j++){
-            Event.addEvent(ul[j],'click',function(event){
-
-                var tar = event.target || event.srcElement;
-
-                // var tar = event.target;
-                if(tar.nodeName.toLowerCase() == "i"){
-                    tar.parentNode.parentNode.removeChild(tar.parentNode);
-                }
-
-
-
-            });
-        }
-
-
-        var expandBtn = document.getElementById("expand");
-        var reduceBtn = document.getElementById("reduce");
-
-        Event.addEvent(expandBtn,'click',function (event) {
-            var classVal = expandBtn.getAttribute("class");
-
-            if(classVal.indexOf("acitve") != -1){
-                return;
-            }else{
-                classVal = classVal.concat(" active");
-                expandBtn.setAttribute("class",classVal); // 给点击的button添加样式，并给对方的去掉
-                reduceBtn.setAttribute("class","icon icon-th-list")
-
-                // 展开
-                if(document.body.offsetWidth > 1024){
-                    var sidebar = document.getElementById("sidebar");
-                    sidebar.style.display="none";
-                    var main = document.getElementById("main");
-                    main.setAttribute("class","grid-item main main-expand")
-
-                }
-
-            }
-
-        })
+        // })
 
         // Event.addEvent(ul,'click',function(event){
         //     // var ev = event || window.event;
@@ -298,9 +311,7 @@
         //
         //
         // });
-
-
-    }
+    //}
 </script>
 </body>
 
